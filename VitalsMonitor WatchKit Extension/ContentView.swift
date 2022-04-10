@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-                Text("Emergency?").font(.system(size: 14))
+            Text("We are monitoring your health!").font(.system(size: 14)).foregroundColor(.green)
         }
     }
 }
@@ -93,8 +93,6 @@ struct EmergencyResponse: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
-            ContentView()
             ContentView()
         }
     }

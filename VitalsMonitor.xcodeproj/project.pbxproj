@@ -20,6 +20,7 @@
 		1A4AF1CF2802922A00BAFF3C /* VitalsMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1CE2802922A00BAFF3C /* VitalsMonitorTests.swift */; };
 		1A4AF1D92802922A00BAFF3C /* VitalsMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1D82802922A00BAFF3C /* VitalsMonitorUITests.swift */; };
 		1A4AF1DB2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1DA2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift */; };
+		1A4AF1F62803973900BAFF3C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4AF1F52803973900BAFF3C /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,9 @@
 		1A4AF1D42802922A00BAFF3C /* VitalsMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitalsMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4AF1D82802922A00BAFF3C /* VitalsMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalsMonitorUITests.swift; sourceTree = "<group>"; };
 		1A4AF1DA2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalsMonitorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A4AF1F32803973800BAFF3C /* VitalsMonitor WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VitalsMonitor WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		1A4AF1F52803973900BAFF3C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		1A4AF1F72803978700BAFF3C /* VitalsMonitor WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VitalsMonitor WatchKit App.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4AF1F62803973900BAFF3C /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +137,7 @@
 				1A4AF1CD2802922A00BAFF3C /* VitalsMonitorTests */,
 				1A4AF1D72802922A00BAFF3C /* VitalsMonitorUITests */,
 				1A4AF1A22802921E00BAFF3C /* Products */,
+				1A4AF1F42803973900BAFF3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +156,7 @@
 		1A4AF1A92802921F00BAFF3C /* VitalsMonitor WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				1A4AF1F72803978700BAFF3C /* VitalsMonitor WatchKit App.entitlements */,
 				1A4AF1AA2802922800BAFF3C /* Assets.xcassets */,
 			);
 			path = "VitalsMonitor WatchKit App";
@@ -158,6 +165,7 @@
 		1A4AF1B42802922800BAFF3C /* VitalsMonitor WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1A4AF1F32803973800BAFF3C /* VitalsMonitor WatchKit Extension.entitlements */,
 				1A4AF1B52802922800BAFF3C /* VitalsMonitorApp.swift */,
 				1A4AF1B72802922800BAFF3C /* ContentView.swift */,
 				1A4AF1B92802922900BAFF3C /* NotificationController.swift */,
@@ -194,6 +202,14 @@
 				1A4AF1DA2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift */,
 			);
 			path = VitalsMonitorUITests;
+			sourceTree = "<group>";
+		};
+		1A4AF1F42803973900BAFF3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A4AF1F52803973900BAFF3C /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,6 +566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "VitalsMonitor WatchKit Extension/VitalsMonitor WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VitalsMonitor WatchKit Extension/Preview Content\"";
@@ -558,7 +575,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "VitalsMonitor WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "VitalsMonitor WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = VitalsMonitor_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -582,6 +599,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "VitalsMonitor WatchKit Extension/VitalsMonitor WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VitalsMonitor WatchKit Extension/Preview Content\"";
@@ -590,7 +608,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "VitalsMonitor WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "VitalsMonitor WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = VitalsMonitor_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -616,6 +634,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VitalsMonitor WatchKit App/VitalsMonitor WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G55K86P5U7;
@@ -641,6 +660,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VitalsMonitor WatchKit App/VitalsMonitor WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G55K86P5U7;
@@ -663,12 +683,14 @@
 		1A4AF1E72802922A00BAFF3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G55K86P5U7;
+				DEVELOPMENT_TEAM = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -676,12 +698,14 @@
 		1A4AF1E82802922A00BAFF3C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G55K86P5U7;
+				DEVELOPMENT_TEAM = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

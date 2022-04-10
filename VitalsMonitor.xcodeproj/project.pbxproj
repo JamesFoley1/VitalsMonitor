@@ -1,0 +1,829 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A4AF1A62802921F00BAFF3C /* VitalsMonitor WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1A4AF1A52802921F00BAFF3C /* VitalsMonitor WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1A4AF1AB2802922800BAFF3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AF1AA2802922800BAFF3C /* Assets.xcassets */; };
+		1A4AF1B12802922800BAFF3C /* VitalsMonitor WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A4AF1B02802922800BAFF3C /* VitalsMonitor WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1A4AF1B62802922800BAFF3C /* VitalsMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1B52802922800BAFF3C /* VitalsMonitorApp.swift */; };
+		1A4AF1B82802922800BAFF3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1B72802922800BAFF3C /* ContentView.swift */; };
+		1A4AF1BA2802922900BAFF3C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1B92802922900BAFF3C /* NotificationController.swift */; };
+		1A4AF1BC2802922900BAFF3C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1BB2802922900BAFF3C /* NotificationView.swift */; };
+		1A4AF1BE2802922900BAFF3C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1BD2802922900BAFF3C /* ComplicationController.swift */; };
+		1A4AF1C02802922A00BAFF3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AF1BF2802922A00BAFF3C /* Assets.xcassets */; };
+		1A4AF1C32802922A00BAFF3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4AF1C22802922A00BAFF3C /* Preview Assets.xcassets */; };
+		1A4AF1CF2802922A00BAFF3C /* VitalsMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1CE2802922A00BAFF3C /* VitalsMonitorTests.swift */; };
+		1A4AF1D92802922A00BAFF3C /* VitalsMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1D82802922A00BAFF3C /* VitalsMonitorUITests.swift */; };
+		1A4AF1DB2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1DA2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A4AF1A72802921F00BAFF3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4AF19B2802921E00BAFF3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A4AF1A42802921F00BAFF3C;
+			remoteInfo = "VitalsMonitor WatchKit App";
+		};
+		1A4AF1B22802922800BAFF3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4AF19B2802921E00BAFF3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A4AF1AF2802922800BAFF3C;
+			remoteInfo = "VitalsMonitor WatchKit Extension";
+		};
+		1A4AF1CB2802922A00BAFF3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4AF19B2802921E00BAFF3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A4AF1AF2802922800BAFF3C;
+			remoteInfo = "VitalsMonitor WatchKit Extension";
+		};
+		1A4AF1D52802922A00BAFF3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A4AF19B2802921E00BAFF3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A4AF1A42802921F00BAFF3C;
+			remoteInfo = "VitalsMonitor WatchKit App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A4AF1E12802922A00BAFF3C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1A4AF1B12802922800BAFF3C /* VitalsMonitor WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4AF1E52802922A00BAFF3C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1A4AF1A62802921F00BAFF3C /* VitalsMonitor WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1A4AF1A12802921E00BAFF3C /* VitalsMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitalsMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4AF1A52802921F00BAFF3C /* VitalsMonitor WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VitalsMonitor WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4AF1AA2802922800BAFF3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A4AF1B02802922800BAFF3C /* VitalsMonitor WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "VitalsMonitor WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4AF1B52802922800BAFF3C /* VitalsMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalsMonitorApp.swift; sourceTree = "<group>"; };
+		1A4AF1B72802922800BAFF3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A4AF1B92802922900BAFF3C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		1A4AF1BB2802922900BAFF3C /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		1A4AF1BD2802922900BAFF3C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		1A4AF1BF2802922A00BAFF3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A4AF1C22802922A00BAFF3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1A4AF1C42802922A00BAFF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A4AF1C52802922A00BAFF3C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		1A4AF1CA2802922A00BAFF3C /* VitalsMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitalsMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4AF1CE2802922A00BAFF3C /* VitalsMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalsMonitorTests.swift; sourceTree = "<group>"; };
+		1A4AF1D42802922A00BAFF3C /* VitalsMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VitalsMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4AF1D82802922A00BAFF3C /* VitalsMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalsMonitorUITests.swift; sourceTree = "<group>"; };
+		1A4AF1DA2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalsMonitorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A4AF1AD2802922800BAFF3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4AF1C72802922A00BAFF3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4AF1D12802922A00BAFF3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A4AF19A2802921E00BAFF3C = {
+			isa = PBXGroup;
+			children = (
+				1A4AF1A92802921F00BAFF3C /* VitalsMonitor WatchKit App */,
+				1A4AF1B42802922800BAFF3C /* VitalsMonitor WatchKit Extension */,
+				1A4AF1CD2802922A00BAFF3C /* VitalsMonitorTests */,
+				1A4AF1D72802922A00BAFF3C /* VitalsMonitorUITests */,
+				1A4AF1A22802921E00BAFF3C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A4AF1A22802921E00BAFF3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A4AF1A12802921E00BAFF3C /* VitalsMonitor.app */,
+				1A4AF1A52802921F00BAFF3C /* VitalsMonitor WatchKit App.app */,
+				1A4AF1B02802922800BAFF3C /* VitalsMonitor WatchKit Extension.appex */,
+				1A4AF1CA2802922A00BAFF3C /* VitalsMonitorTests.xctest */,
+				1A4AF1D42802922A00BAFF3C /* VitalsMonitorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A4AF1A92802921F00BAFF3C /* VitalsMonitor WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				1A4AF1AA2802922800BAFF3C /* Assets.xcassets */,
+			);
+			path = "VitalsMonitor WatchKit App";
+			sourceTree = "<group>";
+		};
+		1A4AF1B42802922800BAFF3C /* VitalsMonitor WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1A4AF1B52802922800BAFF3C /* VitalsMonitorApp.swift */,
+				1A4AF1B72802922800BAFF3C /* ContentView.swift */,
+				1A4AF1B92802922900BAFF3C /* NotificationController.swift */,
+				1A4AF1BB2802922900BAFF3C /* NotificationView.swift */,
+				1A4AF1BD2802922900BAFF3C /* ComplicationController.swift */,
+				1A4AF1BF2802922A00BAFF3C /* Assets.xcassets */,
+				1A4AF1C42802922A00BAFF3C /* Info.plist */,
+				1A4AF1C52802922A00BAFF3C /* PushNotificationPayload.apns */,
+				1A4AF1C12802922A00BAFF3C /* Preview Content */,
+			);
+			path = "VitalsMonitor WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		1A4AF1C12802922A00BAFF3C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1A4AF1C22802922A00BAFF3C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1A4AF1CD2802922A00BAFF3C /* VitalsMonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A4AF1CE2802922A00BAFF3C /* VitalsMonitorTests.swift */,
+			);
+			path = VitalsMonitorTests;
+			sourceTree = "<group>";
+		};
+		1A4AF1D72802922A00BAFF3C /* VitalsMonitorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1A4AF1D82802922A00BAFF3C /* VitalsMonitorUITests.swift */,
+				1A4AF1DA2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift */,
+			);
+			path = VitalsMonitorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A4AF1A02802921E00BAFF3C /* VitalsMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A4AF1E62802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitor" */;
+			buildPhases = (
+				1A4AF19F2802921E00BAFF3C /* Resources */,
+				1A4AF1E52802922A00BAFF3C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A4AF1A82802921F00BAFF3C /* PBXTargetDependency */,
+			);
+			name = VitalsMonitor;
+			productName = VitalsMonitor;
+			productReference = 1A4AF1A12802921E00BAFF3C /* VitalsMonitor.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		1A4AF1A42802921F00BAFF3C /* VitalsMonitor WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A4AF1E22802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitor WatchKit App" */;
+			buildPhases = (
+				1A4AF1A32802921F00BAFF3C /* Resources */,
+				1A4AF1E12802922A00BAFF3C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A4AF1B32802922800BAFF3C /* PBXTargetDependency */,
+			);
+			name = "VitalsMonitor WatchKit App";
+			productName = "VitalsMonitor WatchKit App";
+			productReference = 1A4AF1A52802921F00BAFF3C /* VitalsMonitor WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		1A4AF1AF2802922800BAFF3C /* VitalsMonitor WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A4AF1DE2802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitor WatchKit Extension" */;
+			buildPhases = (
+				1A4AF1AC2802922800BAFF3C /* Sources */,
+				1A4AF1AD2802922800BAFF3C /* Frameworks */,
+				1A4AF1AE2802922800BAFF3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VitalsMonitor WatchKit Extension";
+			productName = "VitalsMonitor WatchKit Extension";
+			productReference = 1A4AF1B02802922800BAFF3C /* VitalsMonitor WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		1A4AF1C92802922A00BAFF3C /* VitalsMonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A4AF1E92802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitorTests" */;
+			buildPhases = (
+				1A4AF1C62802922A00BAFF3C /* Sources */,
+				1A4AF1C72802922A00BAFF3C /* Frameworks */,
+				1A4AF1C82802922A00BAFF3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A4AF1CC2802922A00BAFF3C /* PBXTargetDependency */,
+			);
+			name = VitalsMonitorTests;
+			productName = VitalsMonitorTests;
+			productReference = 1A4AF1CA2802922A00BAFF3C /* VitalsMonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1A4AF1D32802922A00BAFF3C /* VitalsMonitorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A4AF1EC2802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitorUITests" */;
+			buildPhases = (
+				1A4AF1D02802922A00BAFF3C /* Sources */,
+				1A4AF1D12802922A00BAFF3C /* Frameworks */,
+				1A4AF1D22802922A00BAFF3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A4AF1D62802922A00BAFF3C /* PBXTargetDependency */,
+			);
+			name = VitalsMonitorUITests;
+			productName = VitalsMonitorUITests;
+			productReference = 1A4AF1D42802922A00BAFF3C /* VitalsMonitorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A4AF19B2802921E00BAFF3C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					1A4AF1A02802921E00BAFF3C = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					1A4AF1A42802921F00BAFF3C = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					1A4AF1AF2802922800BAFF3C = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					1A4AF1C92802922A00BAFF3C = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 1A4AF1AF2802922800BAFF3C;
+					};
+					1A4AF1D32802922A00BAFF3C = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 1A4AF1A42802921F00BAFF3C;
+					};
+				};
+			};
+			buildConfigurationList = 1A4AF19E2802921E00BAFF3C /* Build configuration list for PBXProject "VitalsMonitor" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A4AF19A2802921E00BAFF3C;
+			productRefGroup = 1A4AF1A22802921E00BAFF3C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A4AF1A02802921E00BAFF3C /* VitalsMonitor */,
+				1A4AF1A42802921F00BAFF3C /* VitalsMonitor WatchKit App */,
+				1A4AF1AF2802922800BAFF3C /* VitalsMonitor WatchKit Extension */,
+				1A4AF1C92802922A00BAFF3C /* VitalsMonitorTests */,
+				1A4AF1D32802922A00BAFF3C /* VitalsMonitorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A4AF19F2802921E00BAFF3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4AF1A32802921F00BAFF3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A4AF1AB2802922800BAFF3C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4AF1AE2802922800BAFF3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A4AF1C32802922A00BAFF3C /* Preview Assets.xcassets in Resources */,
+				1A4AF1C02802922A00BAFF3C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4AF1C82802922A00BAFF3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4AF1D22802922A00BAFF3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A4AF1AC2802922800BAFF3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A4AF1BA2802922900BAFF3C /* NotificationController.swift in Sources */,
+				1A4AF1B82802922800BAFF3C /* ContentView.swift in Sources */,
+				1A4AF1BE2802922900BAFF3C /* ComplicationController.swift in Sources */,
+				1A4AF1B62802922800BAFF3C /* VitalsMonitorApp.swift in Sources */,
+				1A4AF1BC2802922900BAFF3C /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4AF1C62802922A00BAFF3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A4AF1CF2802922A00BAFF3C /* VitalsMonitorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A4AF1D02802922A00BAFF3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A4AF1DB2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift in Sources */,
+				1A4AF1D92802922A00BAFF3C /* VitalsMonitorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A4AF1A82802921F00BAFF3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A4AF1A42802921F00BAFF3C /* VitalsMonitor WatchKit App */;
+			targetProxy = 1A4AF1A72802921F00BAFF3C /* PBXContainerItemProxy */;
+		};
+		1A4AF1B32802922800BAFF3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A4AF1AF2802922800BAFF3C /* VitalsMonitor WatchKit Extension */;
+			targetProxy = 1A4AF1B22802922800BAFF3C /* PBXContainerItemProxy */;
+		};
+		1A4AF1CC2802922A00BAFF3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A4AF1AF2802922800BAFF3C /* VitalsMonitor WatchKit Extension */;
+			targetProxy = 1A4AF1CB2802922A00BAFF3C /* PBXContainerItemProxy */;
+		};
+		1A4AF1D62802922A00BAFF3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A4AF1A42802921F00BAFF3C /* VitalsMonitor WatchKit App */;
+			targetProxy = 1A4AF1D52802922A00BAFF3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A4AF1DC2802922A00BAFF3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1A4AF1DD2802922A00BAFF3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A4AF1DF2802922A00BAFF3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VitalsMonitor WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "VitalsMonitor WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "VitalsMonitor WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitor.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		1A4AF1E02802922A00BAFF3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VitalsMonitor WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "VitalsMonitor WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "VitalsMonitor WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitor.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		1A4AF1E32802922A00BAFF3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = VitalsMonitor_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "VitalsMonitor WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitor.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		1A4AF1E42802922A00BAFF3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = VitalsMonitor_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "VitalsMonitor WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitor.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		1A4AF1E72802922A00BAFF3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1A4AF1E82802922A00BAFF3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1A4AF1EA2802922A00BAFF3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VitalsMonitor WatchKit Extension.appex/VitalsMonitor WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		1A4AF1EB2802922A00BAFF3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VitalsMonitor WatchKit Extension.appex/VitalsMonitor WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		1A4AF1ED2802922A00BAFF3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "VitalsMonitor WatchKit App";
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		1A4AF1EE2802922A00BAFF3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G55K86P5U7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jamesFoley.VitalsMonitorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "VitalsMonitor WatchKit App";
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A4AF19E2802921E00BAFF3C /* Build configuration list for PBXProject "VitalsMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A4AF1DC2802922A00BAFF3C /* Debug */,
+				1A4AF1DD2802922A00BAFF3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A4AF1DE2802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitor WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A4AF1DF2802922A00BAFF3C /* Debug */,
+				1A4AF1E02802922A00BAFF3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A4AF1E22802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitor WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A4AF1E32802922A00BAFF3C /* Debug */,
+				1A4AF1E42802922A00BAFF3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A4AF1E62802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A4AF1E72802922A00BAFF3C /* Debug */,
+				1A4AF1E82802922A00BAFF3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A4AF1E92802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A4AF1EA2802922A00BAFF3C /* Debug */,
+				1A4AF1EB2802922A00BAFF3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A4AF1EC2802922A00BAFF3C /* Build configuration list for PBXNativeTarget "VitalsMonitorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A4AF1ED2802922A00BAFF3C /* Debug */,
+				1A4AF1EE2802922A00BAFF3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A4AF19B2802921E00BAFF3C /* Project object */;
+}

@@ -21,6 +21,7 @@
 		1A4AF1D92802922A00BAFF3C /* VitalsMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1D82802922A00BAFF3C /* VitalsMonitorUITests.swift */; };
 		1A4AF1DB2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1DA2802922A00BAFF3C /* VitalsMonitorUITestsLaunchTests.swift */; };
 		1A4AF1F62803973900BAFF3C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4AF1F52803973900BAFF3C /* HealthKit.framework */; };
+		1A4AF1F9280532BF00BAFF3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4AF1F8280532BF00BAFF3C /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		1A4AF1F32803973800BAFF3C /* VitalsMonitor WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VitalsMonitor WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		1A4AF1F52803973900BAFF3C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		1A4AF1F72803978700BAFF3C /* VitalsMonitor WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VitalsMonitor WatchKit App.entitlements"; sourceTree = "<group>"; };
+		1A4AF1F8280532BF00BAFF3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				1A4AF1B92802922900BAFF3C /* NotificationController.swift */,
 				1A4AF1BB2802922900BAFF3C /* NotificationView.swift */,
 				1A4AF1BD2802922900BAFF3C /* ComplicationController.swift */,
+				1A4AF1F8280532BF00BAFF3C /* ViewController.swift */,
 				1A4AF1BF2802922A00BAFF3C /* Assets.xcassets */,
 				1A4AF1C42802922A00BAFF3C /* Info.plist */,
 				1A4AF1C52802922A00BAFF3C /* PushNotificationPayload.apns */,
@@ -399,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4AF1F9280532BF00BAFF3C /* ViewController.swift in Sources */,
 				1A4AF1BA2802922900BAFF3C /* NotificationController.swift in Sources */,
 				1A4AF1B82802922800BAFF3C /* ContentView.swift in Sources */,
 				1A4AF1BE2802922900BAFF3C /* ComplicationController.swift in Sources */,

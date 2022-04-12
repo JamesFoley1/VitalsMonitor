@@ -16,6 +16,12 @@
 	<array>
 		<string>location</string>
 	</array>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Want to access VitalsMonitor app to read heart rate</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Want to access VitalsMonitor app to read heart rate</string>
+	<key>NSLocalizedDescription</key>
+	<string></string>
 	<key>WKBackgroundModes</key>
 	<array>
 		<string>self-care</string>

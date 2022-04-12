@@ -49,15 +49,28 @@ struct timerScreen: View{
                 
                 HStack{
                     //Yes button
-                    NavigationLink(destination: emergencyScreen(emergencyScreenShown: $emergencyScreenShown), isActive: $emergencyScreenShown, label: {Text("Yes").foregroundColor(.red)})
+                    
+                    Button(action:{
+                        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){
+                            timer in if self.timerVal > 0 {
+                                self.timerVal = 0
+                            }
+                        }
+                    }) {
+                        Text("Yes").foregroundColor(.red)
+                    }
                     .tint(.red)
                     
-                    //No button
-                    NavigationLink(destination: ContentView(),label: {Text("No").foregroundColor(.green)})
+                    Button(action:{
+                        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){
+                            timer in if self.timerVal > 0 {
+                                self.timerVal = -1
+                            }
+                        }
+                    }) {
+                        Text("No").foregroundColor(.green)
+                    }
                     .tint(.green)
-                    
-                    
-                    
                 }
             }
             else if(timerVal==0){

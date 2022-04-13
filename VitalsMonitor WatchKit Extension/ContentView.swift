@@ -22,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         VStack{
             Text("We are monitoring...").foregroundColor(.green)
-                .font(.system(size: 20))
+                .font(.system(size: 15))
 
             HStack{
                 Text("❤️")
@@ -50,14 +50,40 @@ struct ContentView: View {
     
     func start() {
         autorizeHealthKit()
-        startHeartRateQuery(quantityTypeIdentifier: .heartRate)
+        
+        if permissionGranted {
+//          remove this section for real world use
+            let configuration = HKWorkoutConfiguration()
+            configuration.activityType = .running
+            configuration.locationType = .outdoor
+
+            do {
+                let session = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
+
+                session.startActivity(with: Date())
+            } catch {
+                // Handle failure here.
+                print("session failed")
+                return
+            }
+
+            startHeartRateQuery(quantityTypeIdentifier: .heartRate)
+        }
     }
     
     func autorizeHealthKit() {
         let healthKitTypes: Set = [
         HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
 
-        healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { _, _ in }
+        healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (check, error) in
+            if(check) {
+                permissionGranted = true
+            }
+            else if (error != nil) {
+                print("permission denied")
+            }
+            
+        }
     }
     
     private func startHeartRateQuery(quantityTypeIdentifier: HKQuantityTypeIdentifier) {
@@ -89,12 +115,12 @@ struct ContentView: View {
                 lastHeartRate = sample.quantity.doubleValue(for: heartRateQuantity)
             }
             
+            print(lastHeartRate)
+            
             self.value = Int(lastHeartRate)
         }
         
-        if lastHeartRate > 100 || lastHeartRate < 40 {
-//            NavigationLink(destination: timerScreen(timerScreenShown: $timerScreenShown, emergencyScreenShown: $emergencyScreenShown), isActive: $timerScreenShown, label: {Text("Temp to Timer")})
-//            timerScreen(timerScreenShown: $timerScreenShown, emergencyScreenShown: $emergencyScreenShown)
+        if lastHeartRate > 120 || lastHeartRate < 40 {
             timerScreenShown = true
         }
                 

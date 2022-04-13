@@ -92,7 +92,7 @@ struct ContentView: View {
             self.value = Int(lastHeartRate)
         }
         
-        if lastHeartRate > 118 || lastHeartRate < 40 {
+        if lastHeartRate > 100 || lastHeartRate < 40 {
 //            NavigationLink(destination: timerScreen(timerScreenShown: $timerScreenShown, emergencyScreenShown: $emergencyScreenShown), isActive: $timerScreenShown, label: {Text("Temp to Timer")})
 //            timerScreen(timerScreenShown: $timerScreenShown, emergencyScreenShown: $emergencyScreenShown)
             timerScreenShown = true
@@ -112,7 +112,7 @@ struct emergencyScreen: View {
 public struct timerScreen: View {
     @Binding var timerScreenShown:Bool
     @Binding var emergencyScreenShown:Bool
-    @State var timerVal = 5
+    @State var timerVal = 60
 
     public var body: some View {
         VStack{

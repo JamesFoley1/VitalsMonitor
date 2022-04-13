@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  VitalTest WatchKit Extension
 //
-//  Created by Daniel Mendoza on 4/11/22.
+//  Created by Daniel Mendoza and James Foley on 4/11/22.
 //
 
 import SwiftUI
@@ -10,116 +10,94 @@ import HealthKit
 
 struct ContentView: View {
     @State var emergencyScreenShown = false
-    @State var timerVal = -1
-    @State var timerScreenShown = false
-    @State var heartRateFlag = false
     @State var permissionGranted = false
+    @State var timerScreenShown = false
+    @State var timerVal = -1
 
-    let healthStore = HKHealthStore()
+    private var healthStore = HKHealthStore()
+    let heartRateQuantity = HKUnit(from: "count/min")
     
-    func authorizeHealthKit() {
-
-        let heartRate_ = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!])
-        let heartRateShared_ = Set([HKObjectType.quantityType(forIdentifier: .heartRate)!])
-
-        healthStore.requestAuthorization(toShare: heartRateShared_, read: heartRate_) {
-            (check, error) in
-            if(check) {
-                print("permission granted")
-                permissionGranted = true
-                getLatestHeartRate()
-            }
-            else if (error != nil) {
-                print("permission denied")
-            }
-        }
-    }
-    
-    func saveQuantity(type: String, device: String?, unit: String, startDate: String, endDate: String, value: String, metadata: [String : Any]?){
-            // 'Authorization to share the following types is disallowed: HKQuantityTypeIdentifierWalkingHeartRateAverage' 等
-            guard type != "HKQuantityTypeIdentifierAppleExerciseTime" else { return }
-            guard type != "HKQuantityTypeIdentifierWalkingHeartRateAverage" else { return }
-            guard type != "HKQuantityTypeIdentifierXXXXXXXXXXXXXXXX" else { return } // <- Add
-    }
-    
-    func getLatestHeartRate() {
-        if permissionGranted {
-            let configuration = HKWorkoutConfiguration()
-            configuration.activityType = .running
-            configuration.locationType = .outdoor
-            
-            do {
-                let session = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
-//                let builder_ = session.associatedWorkoutBuilder()
-                session.startActivity(with: Date())
-                
-//                builder_.beginCollection(withStart: Date()) { (success, error) in
-
-//                    guard success else {
-//                        // Handle errors.
-//                        print("ERROR STARTING SESSION")
-//                        print(error!)
-//                        return
-//                    }
-//                    print(success)
-//                     Indicate that the session has started.
-//                }
-            } catch {
-                // Handle failure here.
-                print("session failed")
-                return
-            }
-            
-            
-
-            guard let currentHeartRate = HKObjectType.quantityType(forIdentifier: .heartRate) else {
-                return
-            }
-            
-            let startDate = Calendar.current.date(byAdding: .month, value: -1, to: Date())
-            
-            let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
-            
-            let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-            
-            let query = HKSampleQuery(sampleType: currentHeartRate, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in guard error == nil else {
-                    print("error")
-                    print(error!)
-                    return
-                }
-                
-                
-                print("sample", sample)
-                print("result", result! == [])
-                if result! == [] {
-                    print("No Heart Rate Data")
-                }
-                else {
-                    print(result![0])
-                    let data = result![0] as! HKQuantitySample
-                    let unit = HKUnit(from: "count/min")
-                    let latestHr = data.quantity.doubleValue(for: unit)
-                    print("Latest Hr \(latestHr) BPM.")
-
-                    let dateFormator = DateFormatter()
-                    dateFormator.dateFormat = "dd/MM/yyyy hh:mm s"
-                    let startDate = dateFormator.string(from: data.startDate)
-                    let endDate = dateFormator.string(from: data.endDate)
-
-                    print("Start Date \(startDate) : EndDate \(endDate)")
-                }
-            }
-            healthStore.execute(query)
-        }
-    }
+    @State private var value = 0
     
     var body: some View {
         VStack{
-            Text("We are monitoring your health!").foregroundColor(.green)
-                .padding()
+            Text("We are monitoring...").foregroundColor(.green)
+                .font(.system(size: 20))
+
+            HStack{
+                Text("❤️")
+                    .font(.system(size: 20))
+
+                Text("\(value)")
+                    .fontWeight(.regular)
+                    .font(.system(size: 35))
+                
+                Text("BPM")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.red)
+            }
+
             NavigationLink(destination: emergencyScreen(emergencyScreenShown: $emergencyScreenShown), isActive: $emergencyScreenShown, label: {Text("Tap if emergency!").foregroundColor(.red)})
-            NavigationLink(destination: timerScreen(timerScreenShown: $timerScreenShown, emergencyScreenShown: $emergencyScreenShown), isActive: $timerScreenShown, label: {Text("Temp to Timer")})
-        }.onLoad{ authorizeHealthKit() }
+            NavigationLink(destination: timerScreen(timerScreenShown: $timerScreenShown, emergencyScreenShown: $emergencyScreenShown), isActive: $timerScreenShown) {
+                EmptyView()
+            }.hidden()
+        }
+        .padding()
+        .onAppear(perform: start)
+    }
+
+    
+    func start() {
+        autorizeHealthKit()
+        startHeartRateQuery(quantityTypeIdentifier: .heartRate)
+    }
+    
+    func autorizeHealthKit() {
+        let healthKitTypes: Set = [
+        HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
+
+        healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { _, _ in }
+    }
+    
+    private func startHeartRateQuery(quantityTypeIdentifier: HKQuantityTypeIdentifier) {
+        let devicePredicate = HKQuery.predicateForObjects(from: [HKDevice.local()])
+
+        let updateHandler: (HKAnchoredObjectQuery, [HKSample]?, [HKDeletedObject]?, HKQueryAnchor?, Error?) -> Void = {
+                query, samples, deletedObjects, queryAnchor, error in
+            
+                guard let samples = samples as? [HKQuantitySample] else {
+                    return
+            }
+            
+            self.process(samples, type: quantityTypeIdentifier)
+
+        }
+        
+        let query = HKAnchoredObjectQuery(type: HKObjectType.quantityType(forIdentifier: quantityTypeIdentifier)!, predicate: devicePredicate, anchor: nil, limit: HKObjectQueryNoLimit, resultsHandler: updateHandler)
+        
+        query.updateHandler = updateHandler
+        
+        healthStore.execute(query)
+    }
+    
+    private func process(_ samples: [HKQuantitySample], type: HKQuantityTypeIdentifier) {
+        var lastHeartRate = 0.0
+        
+        for sample in samples {
+            if type == .heartRate {
+                lastHeartRate = sample.quantity.doubleValue(for: heartRateQuantity)
+            }
+            
+            self.value = Int(lastHeartRate)
+        }
+        
+        if lastHeartRate > 118 || lastHeartRate < 40 {
+//            NavigationLink(destination: timerScreen(timerScreenShown: $timerScreenShown, emergencyScreenShown: $emergencyScreenShown), isActive: $timerScreenShown, label: {Text("Temp to Timer")})
+//            timerScreen(timerScreenShown: $timerScreenShown, emergencyScreenShown: $emergencyScreenShown)
+            timerScreenShown = true
+        }
+                
     }
 }
 
@@ -131,60 +109,58 @@ struct emergencyScreen: View {
     }
 }
 
-struct timerScreen: View{
+public struct timerScreen: View {
     @Binding var timerScreenShown:Bool
     @Binding var emergencyScreenShown:Bool
-    //@state var heartRateFlag = true
     @State var timerVal = 5
-    var body: some View {
+
+    public var body: some View {
         VStack{
-            if timerVal > 0 {
-                Text("Emergency?").font(.system(size: 14))
-                Text("\(timerVal)").font(.system(size: 40)).onAppear(){
+            Text("Emergency?").font(.system(size: 14))
+            Text("\(timerVal)").font(.system(size: 40)).onAppear(){
+                Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){
+                    timer in if self.timerVal > 0 {
+                        self.timerVal -= 1
+                        if timerVal == 0 {
+                            emergencyScreenShown = true
+                        }
+                    }
+                }
+            }
+            Text("Please Respond").font(.system(size: 14))
+            
+            HStack{
+                //Yes button
+                
+                Button(action:{
                     Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){
                         timer in if self.timerVal > 0 {
-                            self.timerVal -= 1
+                            self.timerVal = 0
                         }
                     }
+                    emergencyScreenShown = true
+                }) {
+                    Text("Yes").foregroundColor(.red)
                 }
-                Text("Please Respond").font(.system(size: 14))
+                .tint(.red)
                 
-                HStack{
-                    //Yes button
-                    
-                    Button(action:{
-                        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){
-                            timer in if self.timerVal > 0 {
-                                self.timerVal = 0
-                            }
+                Button(action:{
+                    Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){
+                        timer in if self.timerVal > 0 {
+                            self.timerVal = -1
                         }
-                    }) {
-                        Text("Yes").foregroundColor(.red)
                     }
-                    .tint(.red)
-                    
-                    Button(action:{
-                        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true){
-                            timer in if self.timerVal > 0 {
-                                self.timerVal = -1
-                            }
-                        }
-                    }) {
-                        Text("No").foregroundColor(.green)
-                    }
-                    .tint(.green)
+                    timerScreenShown = false
+                }) {
+                    Text("No").foregroundColor(.green)
                 }
-            }
-            else if(timerVal==0){
-                emergencyScreen(emergencyScreenShown: $emergencyScreenShown)
-            }
-            else{
-                ContentView()
+                .tint(.green)
             }
         }
     }
 }
 
+//may not need these two views
 struct ViewDidLoadModifier: ViewModifier {
 
     @State private var didLoad = false
@@ -218,5 +194,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-

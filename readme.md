@@ -4,5 +4,5 @@ VitalsMonitor is an Apple Watch application built in SwiftUI that can monitor a 
 
 ## Authors
 
-Daniel Mendoza
+Daniel Mendoza |
 James Foley
